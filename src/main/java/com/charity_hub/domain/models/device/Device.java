@@ -72,4 +72,8 @@ public class Device {
     public Date getLastAccessTime() {
         return new Date(lastAccessTime.getTime());
     }
+
+    public DeviceId getDeviceId() {
+        return deviceId;
+    }
 }

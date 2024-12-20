@@ -1,4 +1,4 @@
-package com.charity_hub.application;
+package com.charity_hub.application.authentication;
 
 import com.charity_hub.domain.contracts.IAccountRepo;
 import com.charity_hub.domain.contracts.IAuthProvider;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.concurrent.CompletableFuture;
 
 @Service
-public class AuthenticateHandler {
+public class AuthenticationService implements IAuthenticationService {
     private final IAccountRepo accountRepo;
     private final IInvitationRepo invitationRepo;
     private final IAuthProvider authProvider;
@@ -22,7 +22,7 @@ public class AuthenticateHandler {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-    public AuthenticateHandler(
+    public AuthenticationService(
             IAccountRepo accountRepo,
             IInvitationRepo invitationRepo,
             IAuthProvider authProvider,
@@ -34,7 +34,8 @@ public class AuthenticateHandler {
         this.jwtGenerator = jwtGenerator;
     }
 
-    public CompletableFuture<AuthenticateResponse> handle(Authenticate command) {
+    @Override
+    public CompletableFuture<AuthenticateResponse> authenticate(Authenticate command) {
         return CompletableFuture.supplyAsync(() -> {
             logger.info("Handling authentication for idToken: {}", command.idToken());
 

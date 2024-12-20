@@ -101,4 +101,7 @@ public class Account {
         return Collections.unmodifiableList(devices);
     }
 
+    public MobileNumber getMobileNumber() {
+        return mobileNumber;
+    }
 }
