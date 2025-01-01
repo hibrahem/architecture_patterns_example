@@ -1,4 +1,4 @@
-package com.charity_hub.cases.domain.contracts;
+package com.charity_hub.cases.infrastructure;
 
 import com.charity_hub.cases.domain.models.CaseEvent;
 import com.charity_hub.cases.domain.models.CaseOpened;

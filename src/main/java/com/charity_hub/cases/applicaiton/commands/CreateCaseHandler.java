@@ -13,7 +13,7 @@ public class CreateCaseHandler {
         this.caseRepo = caseRepo;
     }
 
-    public void handle(CreateCase command) {
+    public CaseResponse handle(CreateCase command) {
         int code = caseRepo.nextCode();
 
         var _case = Case.newCase(code,
@@ -25,5 +25,6 @@ public class CreateCaseHandler {
                 command.goal());
 
         caseRepo.save(_case);
+        return new CaseResponse(_case.code());
     }
 }

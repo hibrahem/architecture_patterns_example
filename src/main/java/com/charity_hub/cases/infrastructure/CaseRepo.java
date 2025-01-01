@@ -1,5 +1,6 @@
-package com.charity_hub.cases.domain.contracts;
+package com.charity_hub.cases.infrastructure;
 
+import com.charity_hub.cases.domain.contracts.ICaseRepo;
 import com.charity_hub.cases.domain.models.Case;
 import org.springframework.stereotype.Repository;
 
