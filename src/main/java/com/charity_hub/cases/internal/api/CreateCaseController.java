@@ -1,5 +1,6 @@
 package com.charity_hub.cases.internal.api;
 
+import com.charity_hub.cases.internal.applicaiton.commands.CaseResponse;
 import com.charity_hub.cases.internal.applicaiton.commands.CreateCase;
 import com.charity_hub.cases.internal.applicaiton.commands.CreateCaseHandler;
 import org.springframework.http.HttpStatus;
@@ -19,7 +20,7 @@ public class CreateCaseController {
 
     @PostMapping("/v1/cases")
     public ResponseEntity<?> createCase(@RequestBody CreateCase command) {
-        var response = createCaseHandler.handle(command);
+        CaseResponse response = createCaseHandler.handle(command);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 }
