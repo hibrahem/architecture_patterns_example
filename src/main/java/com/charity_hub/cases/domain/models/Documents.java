@@ -1,4 +1,4 @@
-package com.charity_hub.cases.domain;
+package com.charity_hub.cases.domain.models;
 
 import java.util.List;
 import java.util.regex.Pattern;
