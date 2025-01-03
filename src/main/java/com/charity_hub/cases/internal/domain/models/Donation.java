@@ -8,6 +8,16 @@ public class Donation {
     private UUID customerId;
 
     public Donation(int amount, int caseCode, UUID customerId) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Donation amount must be greater than zero");
+        }
+        if (caseCode <= 0) {
+            throw new IllegalArgumentException("Case code must be a positive number");
+        }
+        if (customerId == null) {
+            throw new IllegalArgumentException("Customer ID cannot be null");
+        }
+        
         this.amount = amount;
         this.caseCode = caseCode;
         this.customerId = customerId;
