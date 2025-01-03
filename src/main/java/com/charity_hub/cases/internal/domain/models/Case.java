@@ -13,7 +13,7 @@ public class Case {
     private int goal;
     private CaseStatus status;
 
-    private List<CaseEvent> occurredEvents = List.of();
+    private ArrayList<CaseEvent> occurredEvents = new ArrayList<>();
 
     public List<CaseEvent> getOccurredEvents() {
         var events = new ArrayList<>(this.occurredEvents);
