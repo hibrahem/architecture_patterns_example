@@ -83,7 +83,7 @@ class CaseTest {
     @Test
     void newCase_ShouldThrowExceptionForInvalidStatus() {
         // When/Then
-        assertThrows(IllegalArgumentException.class, 
-            () -> CaseFixture.createWithStatus("INVALID_STATUS"));
+        assertThrows(IllegalArgumentException.class,
+                () -> CaseFixture.createWithStatus("INVALID_STATUS"));
     }
 } 

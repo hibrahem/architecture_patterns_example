@@ -3,9 +3,10 @@ package com.charity_hub.cases.internal.domain.models;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class DonationTest {
 
@@ -17,9 +18,9 @@ class DonationTest {
         UUID customerId = UUID.randomUUID();
 
         // When/Then
-        assertThrows(IllegalArgumentException.class, () -> 
-            new Donation(amount, caseCode, customerId),
-            "Donation amount must be greater than zero"
+        assertThrows(IllegalArgumentException.class, () ->
+                        new Donation(amount, caseCode, customerId),
+                "Donation amount must be greater than zero"
         );
     }
 
@@ -31,9 +32,9 @@ class DonationTest {
         UUID customerId = UUID.randomUUID();
 
         // When/Then
-        assertThrows(IllegalArgumentException.class, () -> 
-            new Donation(negativeAmount, caseCode, customerId),
-            "Donation amount cannot be negative"
+        assertThrows(IllegalArgumentException.class, () ->
+                        new Donation(negativeAmount, caseCode, customerId),
+                "Donation amount cannot be negative"
         );
     }
 
@@ -45,9 +46,9 @@ class DonationTest {
         UUID customerId = null;
 
         // When/Then
-        assertThrows(IllegalArgumentException.class, () -> 
-            new Donation(amount, caseCode, customerId),
-            "Customer ID cannot be null"
+        assertThrows(IllegalArgumentException.class, () ->
+                        new Donation(amount, caseCode, customerId),
+                "Customer ID cannot be null"
         );
     }
 
@@ -59,9 +60,9 @@ class DonationTest {
         UUID customerId = UUID.randomUUID();
 
         // When/Then
-        assertThrows(IllegalArgumentException.class, () -> 
-            new Donation(amount, invalidCaseCode, customerId),
-            "Case code must be a positive number"
+        assertThrows(IllegalArgumentException.class, () ->
+                        new Donation(amount, invalidCaseCode, customerId),
+                "Case code must be a positive number"
         );
     }
 } 
