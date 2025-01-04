@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CaseTest {
 
     @Test
-    void new_Case_Should_Create_Case_With_Correct_Basic_Values() {
+    void newCase_ShouldCreateCaseWithCorrectBasicValues() {
         // When
         Case case_ = CaseFixture.createDefault();
 
@@ -23,7 +23,7 @@ class CaseTest {
     }
 
     @Test
-    void new_Case_When_Status_Is_Opened_Should_Add_Case_Opened_Event() {
+    void newCase_WhenStatusIsOpened_ShouldAddCaseOpenedEvent() {
         // When
         Case case_ = CaseFixture.createDefault();
         List<CaseEvent> events = case_.getOccurredEvents();
@@ -36,7 +36,7 @@ class CaseTest {
     }
 
     @Test
-    void new_Case_When_Status_Is_Not_Opened_Should_Not_Add_Case_Opened_Event() {
+    void newCase_WhenStatusIsNotOpened_ShouldNotAddCaseOpenedEvent() {
         // When
         Case case_ = CaseFixture.createWithStatus(CaseFixture.STATUS_CLOSED);
         List<CaseEvent> events = case_.getOccurredEvents();
@@ -46,7 +46,7 @@ class CaseTest {
     }
 
     @Test
-    void get_Occurred_Events_Should_Clear_Events_After_Retrieving() {
+    void getOccurredEvents_ShouldClearEventsAfterRetrieving() {
         // Given
         Case case_ = CaseFixture.createDefault();
 
@@ -60,7 +60,7 @@ class CaseTest {
     }
 
     @Test
-    void get_Occurred_Events_Should_Return_Defensive_Copy() {
+    void getOccurredEvents_ShouldReturnDefensiveCopy() {
         // Given
         Case case_ = CaseFixture.createDefault();
 
@@ -75,13 +75,13 @@ class CaseTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"OPENED", "CLOSED", "DRAFT"})
-    void new_Case_Should_Accept_Valid_Statuses(String status) {
+    void newCase_ShouldAcceptValidStatuses(String status) {
         // When/Then
         assertDoesNotThrow(() -> CaseFixture.createWithStatus(status));
     }
 
     @Test
-    void new_Case_Should_Throw_Exception_For_Invalid_Status() {
+    void newCase_ShouldThrowExceptionForInvalidStatus() {
         // When/Then
         assertThrows(IllegalArgumentException.class,
                 () -> CaseFixture.createWithStatus("INVALID_STATUS"));
