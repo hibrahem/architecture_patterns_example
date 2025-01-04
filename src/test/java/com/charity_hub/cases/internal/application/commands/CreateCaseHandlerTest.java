@@ -34,7 +34,7 @@ class CreateCaseHandlerTest {
     }
 
     @Test
-    void handle_ShouldCreateCaseAndReturnResponse() {
+    void handle_Should_Create_Case_And_Return_Response() {
         // Given
         int expectedCode = 12345;
         when(caseRepo.nextCode()).thenReturn(expectedCode);
@@ -58,7 +58,7 @@ class CreateCaseHandlerTest {
     }
 
     @Test
-    void handle_ShouldCreateCaseWithCorrectValues() {
+    void handle_Should_Create_Case_With_Correct_Values() {
         // Given
         int expectedCode = 12345;
         when(caseRepo.nextCode()).thenReturn(expectedCode);

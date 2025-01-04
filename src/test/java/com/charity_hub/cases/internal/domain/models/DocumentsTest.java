@@ -12,7 +12,7 @@ class DocumentsTest {
 
     @Test
     @DisplayName("Should create Documents object when given valid URLs")
-    void shouldCreateDocumentsWithValidUrls() {
+    void should_Create_Documents_With_Valid_Urls() {
         // Given
         List<String> validUrls = List.of(
                 "https://example.com",
@@ -31,7 +31,7 @@ class DocumentsTest {
 
     @Test
     @DisplayName("Should throw IllegalArgumentException when given invalid URL")
-    void shouldThrowExceptionForInvalidUrls() {
+    void should_Throw_Exception_For_Invalid_Urls() {
         // Given
         List<String> invalidUrls = List.of(
                 "not-a-url",
@@ -48,7 +48,7 @@ class DocumentsTest {
 
     @Test
     @DisplayName("Should create Documents object with empty list")
-    void shouldCreateDocumentsWithEmptyList() {
+    void should_Create_Documents_With_Empty_List() {
         // Given
         List<String> emptyList = Collections.emptyList();
 
@@ -62,7 +62,7 @@ class DocumentsTest {
 
     @Test
     @DisplayName("Should throw IllegalArgumentException for single invalid URL in list")
-    void shouldThrowExceptionForSingleInvalidUrlInList() {
+    void should_Throw_Exception_For_Single_Invalid_Url_In_List() {
         // Given
         List<String> mixedUrls = List.of(
                 "https://valid-url.com",

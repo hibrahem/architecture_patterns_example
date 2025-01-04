@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class DonationTest {
 
     @Test
-    void shouldThrowExceptionWhenAmountIsZero() {
+    void should_Throw_Exception_When_Amount_Is_Zero() {
         // Given
         int amount = 0;
         int caseCode = 12345;
@@ -26,7 +26,7 @@ class DonationTest {
 
     @ParameterizedTest
     @ValueSource(ints = {-1, -100, -1000})
-    void shouldThrowExceptionWhenAmountIsNegative(int negativeAmount) {
+    void should_Throw_Exception_When_Amount_Is_Negative(int negativeAmount) {
         // Given
         int caseCode = 12345;
         UUID customerId = UUID.randomUUID();
@@ -39,7 +39,7 @@ class DonationTest {
     }
 
     @Test
-    void shouldThrowExceptionWhenCustomerIdIsNull() {
+    void should_Throw_Exception_When_Customer_Id_Is_Null() {
         // Given
         int amount = 100;
         int caseCode = 12345;
@@ -54,7 +54,7 @@ class DonationTest {
 
     @ParameterizedTest
     @ValueSource(ints = {-1, 0, -100})
-    void shouldThrowExceptionWhenCaseCodeIsInvalid(int invalidCaseCode) {
+    void should_Throw_Exception_When_Case_Code_Is_Invalid(int invalidCaseCode) {
         // Given
         int amount = 100;
         UUID customerId = UUID.randomUUID();
